@@ -45,7 +45,11 @@ const LoginForm = () => {
       // Redirect based on role from context or user input
       if (role.toLowerCase() === 'teacher') {
         navigate('/teacher-dashboard');
-      } else {
+      }
+      if(role.toLowerCase()==='admin'){
+        navigate('/admin-dashboard')
+      }
+      else {
         navigate('/student-dashboard');
       }
 
@@ -68,7 +72,7 @@ const LoginForm = () => {
             name="role"
             value={formData.role}
             onChange={handleChange}
-            placeholder="e.g., Student or Teacher"
+            placeholder="e.g., Student or Teacher or Admin"
           />
         </Form.Group>
 

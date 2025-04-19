@@ -2,7 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "../pages/Login";
 import StudentDashboard from "../pages/StudentDashboard";
-import TeacherDashboard from "../pages/TeacherDashboard"
+import TeacherDashboard from "../pages/TeacherDashboard";
+import AdminDashboard from "../pages/AdminDashboard";
+import Teachers from "../pages/Teachers";
 
 const AppRoutes = () => (
   <Router>
@@ -10,6 +12,9 @@ const AppRoutes = () => (
       <Route path="/" element={<Login />} />
       <Route path="/student-dashboard" element={<StudentDashboard />} />
       <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
+      <Route path="/admin-dashboard" element={<AdminDashboard />} />
+      <Route path="/teachers" element={<Teachers />} />
+
 
     </Routes>
   </Router>
