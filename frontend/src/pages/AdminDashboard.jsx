@@ -24,6 +24,10 @@ const AdminDashboard = () => {
     navigate('/courses');
   };
 
+  const handleRoomsRedirect = () => {
+    navigate('/rooms'); // <--- Route to your Rooms page
+  };
+
   return (
     <div className="d-flex">
       {/* Sidebar */}
@@ -73,7 +77,7 @@ const AdminDashboard = () => {
           </div>
 
           <div className="col-md-4">
-            <button className="btn btn-danger w-100 text-white shadow text-center p-4">
+            <button onClick={handleRoomsRedirect} className="btn btn-danger w-100 text-white shadow text-center p-4">
               <FaMapMarkerAlt size={30} className="mb-2" />
               <div className="fw-bold">Total Rooms</div>
             </button>

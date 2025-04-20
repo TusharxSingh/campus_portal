@@ -6,6 +6,7 @@ import TeacherDashboard from "../pages/TeacherDashboard";
 import AdminDashboard from "../pages/AdminDashboard";
 import Teachers from "../pages/Teachers";
 import Courses from "../pages/Courses";
+import Rooms from "../pages/Rooms";
 const AppRoutes = () => (
   <Router>
     <Routes>
@@ -15,6 +16,7 @@ const AppRoutes = () => (
       <Route path="/admin-dashboard" element={<AdminDashboard />} />
       <Route path="/teachers" element={<Teachers />} />
       <Route path="/courses" element={<Courses />} />
+      <Route path="/rooms" element={<Rooms />} />
 
 
     </Routes>

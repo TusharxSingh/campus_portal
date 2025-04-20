@@ -24,3 +24,17 @@ class Course(models.Model):
 
     def __str__(self):
         return f"{self.name} ({self.code})"
+    
+class Room(models.Model):
+    ROOM_TYPES = [
+        ('Lab', 'Lab'),
+        ('Theatre', 'Theatre'),
+    ]
+
+    name = models.CharField(max_length=100)
+    capacity = models.PositiveIntegerField()
+    type = models.CharField(max_length=20, choices=ROOM_TYPES)
+    available = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.name
