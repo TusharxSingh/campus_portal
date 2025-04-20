@@ -4,6 +4,8 @@ from rest_framework.response import Response
 from rest_framework import viewsets
 from .models import Teacher
 from .serializers import TeacherSerializer
+from .serializers import CourseSerializer
+from .models import Course
 
 
 @api_view(['GET'])
@@ -17,3 +19,8 @@ def user_info(request):
 class TeacherViewSet(viewsets.ModelViewSet):
     queryset = Teacher.objects.all()
     serializer_class = TeacherSerializer
+
+class CourseViewSet(viewsets.ModelViewSet):
+    queryset = Course.objects.all()
+    serializer_class = CourseSerializer
+    permission_classes = [IsAuthenticated]

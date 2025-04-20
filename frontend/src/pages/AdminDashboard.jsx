@@ -7,7 +7,6 @@ import { FaCalendarAlt, FaUser, FaMapMarkerAlt } from 'react-icons/fa';
 const AdminDashboard = () => {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
-  
 
   const handleLogout = () => {
     localStorage.removeItem('accessToken');
@@ -16,8 +15,13 @@ const AdminDashboard = () => {
     if (logout) logout();
     navigate('/');
   };
-const handleTeachersRedirect = () => {
+
+  const handleTeachersRedirect = () => {
     navigate('/Teachers');
+  };
+
+  const handleCoursesClick = () => {
+    navigate('/courses');
   };
 
   return (
@@ -25,7 +29,7 @@ const handleTeachersRedirect = () => {
       {/* Sidebar */}
       <div className="bg-danger text-white d-flex flex-column align-items-center p-3" style={{ width: '250px', minHeight: '100vh' }}>
         <img
-          src="\defaulticon.png" // Replace with actual avatar
+          src="\defaulticon.png"
           alt="avatar"
           className="rounded-circle mb-3"
           width={100}
@@ -54,28 +58,27 @@ const handleTeachersRedirect = () => {
         <h5 className="mb-4">Start Generating Time Table</h5>
 
         <div className="row g-4 mb-4">
-  <div className="col-md-4">
-    <button className="btn btn-danger w-100 text-white shadow text-center p-4">
-      <FaCalendarAlt size={30} className="mb-2" />
-      <div className="fw-bold">Total Subjects</div>
-    </button>
-  </div>
+          <div className="col-md-4">
+            <button onClick={handleCoursesClick} className="btn btn-danger w-100 text-white shadow text-center p-4">
+              <FaCalendarAlt size={30} className="mb-2" />
+              <div className="fw-bold">Total Subjects</div>
+            </button>
+          </div>
 
-  <div className="col-md-4">
+          <div className="col-md-4">
             <button onClick={handleTeachersRedirect} className="btn btn-danger w-100 text-white shadow text-center p-4">
               <FaUser size={30} className="mb-2" />
               <div className="fw-bold">Total Teachers</div>
             </button>
           </div>
 
-  <div className="col-md-4">
-    <button className="btn btn-danger w-100 text-white shadow text-center p-4">
-      <FaMapMarkerAlt size={30} className="mb-2" />
-      <div className="fw-bold">Total Rooms</div>
-    </button>
-  </div>
-</div>
-
+          <div className="col-md-4">
+            <button className="btn btn-danger w-100 text-white shadow text-center p-4">
+              <FaMapMarkerAlt size={30} className="mb-2" />
+              <div className="fw-bold">Total Rooms</div>
+            </button>
+          </div>
+        </div>
 
         <button className="btn btn-light border-danger text-danger fw-bold shadow-sm">Start Generating</button>
       </div>

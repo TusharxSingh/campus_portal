@@ -16,3 +16,11 @@ class Teacher(models.Model):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"    
+class Course(models.Model):
+    name = models.CharField(max_length=100)
+    code = models.CharField(max_length=20)
+    semester = models.IntegerField()
+    department = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"{self.name} ({self.code})"
